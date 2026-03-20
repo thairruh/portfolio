@@ -1,4 +1,5 @@
 import Star from "@/components/star";
+import AboutBlob from "@/components/aboutBlob";
 
 export default function Home() {
   return (
@@ -28,13 +29,24 @@ export default function Home() {
           </div>
         </div>
 
-        
-
       </section>
 
-      {/* about */}
-      <section className="min-h-screen flex items-center justify-center">
-        <p>About section</p>
+      {/* ABOUT */}
+      <section className="relative min-h-[120vh] overflow-hidden">
+        <AboutBlob />
+
+        <div className="relative z-10 h-full w-full">
+          <div className="absolute inset-x-0 top-133 -translate-y-1/2 px-[10%]">
+            <h2 className="text-[#A92F50] text-6xl font-bold">ABOUT ME</h2>
+            <div className="w-67 bg-[#F3EED7] h-0.5 mt-1"></div>
+            <p className="mt-8 max-w-lg text-[#5c2340] text-3xl">
+              My full name is <span className="font-bold">Thaira Choudhury</span> and I am an undergraduate 
+              student at the <span className="font-bold">University of Central Florida</span>. I'm majoring
+              in <span className="font-bold">computer science</span> with a minor in digital media. I enjoy coding,
+              playing video games, cooking, and thrifting!
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* technologies */}
