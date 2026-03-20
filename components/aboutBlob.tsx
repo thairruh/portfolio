@@ -54,7 +54,7 @@ export default function AboutBlob() {
         </defs>
       </svg>
 
-      <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light [background-image:url('/noise.png')]" />
+      <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light bg-[url('/noise.png')]" />
     </div>
   );
 }
