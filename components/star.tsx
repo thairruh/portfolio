@@ -8,13 +8,13 @@ export default function Star() {
             <filter id="filter0_n_10_12" x="0" y="0" width="632.794" height="658.663" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="9940" />
+            <feTurbulence type="fractalNoise" baseFrequency="4 4" stitchTiles="stitch" numOctaves="1" result="noise" seed="9940" />
             <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
             <feComponentTransfer in="alphaNoise" result="coloredNoise1">
             <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
             </feComponentTransfer>
             <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
-            <feFlood flood-color="rgba(0, 0, 0, 0.15)" result="color1Flood" />
+            <feFlood flood-color="rgba(0, 0, 0, 0.09)" result="color1Flood" />
             <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
             <feMerge result="effect1_noise_10_12">
             <feMergeNode in="shape" />
@@ -23,5 +23,6 @@ export default function Star() {
             </filter>
             </defs>
         </svg>
+
     );
 }
