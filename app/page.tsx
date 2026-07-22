@@ -3,13 +3,61 @@ import AboutBlob from "@/components/aboutBlob";
 import SmallStar from "@/components/smallStar";
 import Music from "@/components/music";
 
+const technologies = [
+  {
+    title: "LANGUAGES",
+    border: "#D7A67A",
+    tools: [
+      {name: "Python"},
+      {name: "Java"},
+      {name: "C"},
+      {name: "JavaScript"},
+      {name: "HTML"},
+      {name: "CSS"},
+      {name: "Typescript"},
+      {name: "SQL"},
+      {name: "C++"},
+    ]
+  },
+  {
+    title: "FRAMEWORKS/PACKAGES",
+    border: "#D7A67A",
+    tools: [
+      {name: "React"},
+      {name: "Next.js"},
+      {name: "Tailwind CSS"},
+      {name: "Node.js"},
+      {name: "Vite"},
+      {name: "React Native"},
+      {name: "Flask"},
+      {name: "Three.js"},
+      {name: "Phaser.js"},
+    ]
+  },
+  {
+    title: "TOOLS",
+    border: "#D7A67A",
+    tools: [
+      {name: "Git"},
+      {name: "GitHub"},
+      {name: "VS Code"},
+      {name: "Figma"}, 
+      {name: "Firebase"},
+      {name: "SQLite"},
+      {name: "Godot"},
+      {name: "Adobe After Effects"},
+      {name: "Adobe Premiere Pro"},
+    ]
+  }
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#F6ECD9] text-[#57072F]">
       <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center min-h-screen px-4 md:px-10 gap-2 lg:gap-10 overflow-hidden">
         <Hero />
 
-        <div className="-mt-5 md:mt-0 lg:translate-y-5 lg:translate-x-30">
+        <div className="-mt-5 md:mt-0 lg:translate-y-50  lg:translate-x-30">
           <Music />
         </div>
       </section>
@@ -52,10 +100,14 @@ export default function Home() {
       </section>
 
       {/* technologies */}
-      <section className="min-h-screen flex items-center justify-center">
-        <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold">
-          TECHNOLOGIES
-        </h1>
+      <section className="min-h-screen items-center flex flex-col justify-center">
+        <div className="flex items-center gap-4">
+          <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-[#808249]">
+            TECHNOLOGIES 
+          </h1>
+          <img src="/textStar.svg" alt="" className="w-10 h-auto"/>
+        </div>
+        <div className="w-50 md:w-55 bg-[#A92F50] h-0.5 mt-4"></div>
       </section>
 
       {/* projects */}
