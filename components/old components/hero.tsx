@@ -1,4 +1,4 @@
-import Star from "@/components/star";
+import Star from "@/components/old components/star";
 
 export default function Hero() {
   return (
