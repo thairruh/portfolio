@@ -37,18 +37,31 @@ export default function Folder({
             type="button"
             onClick={() => onToggle(id)}
             aria-expanded={isOpen}
-            className="relative z-10 h-12 w-full text-white"
+            className="relative z-10 h-16 w-full text-white"
         >
             <span
-                className={`
-                    absolute top-0
-                    -translate-y-1/2
-                    rounded-t-2xl px-8 py-3
-                    ${tabPosition}
-                `}
+            className={`
+                absolute top-0
+                h-30 w-70
+                -translate-y-1/2
+                ${tabPosition}
+            `}
+            >
+            {/* Tab background */}
+            <span
+                className="
+                absolute inset-0
+                origin-bottom
+                rounded-t-2xl
+                [transform:perspective(12rem)_rotateX(12deg)]
+                "
                 style={{ backgroundColor: color }}
-                >
+            />
+
+            {/* Tab text */}
+            <span className="relative z-10 flex h-full items-center justify-center">
                 {title}
+            </span>
             </span>
         </button>
 

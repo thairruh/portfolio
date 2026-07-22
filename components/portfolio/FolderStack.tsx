@@ -44,9 +44,9 @@ export default function FolderStack() {
         <section
         className={`
             absolute inset-x-0 bottom-0
-            flex flex-col overflow-hidden pt-6
+            flex flex-col overflow-hidden pt-15
             transition-[height] duration-500 ease-in-out
-            ${isExpanded ? "h-[97svh]" : "h-62"}
+            ${isExpanded ? "h-[97svh]" : "h-79"}
         `}
         >
         <Folder
@@ -66,7 +66,7 @@ export default function FolderStack() {
             color="#818249"
             isOpen={activeFolder === "projects"}
             onToggle={handleToggle}
-            tabPosition="left-[70%]"
+            tabPosition="left-[65%]"
         >
             <ProjectsSection />
         </Folder>
@@ -88,7 +88,7 @@ export default function FolderStack() {
             color="#57062F"
             isOpen={activeFolder === "experience"}
             onToggle={handleToggle}
-            tabPosition="left-[85%]"
+            tabPosition="left-[80%]"
         >
             <ExperienceSection />
         </Folder>

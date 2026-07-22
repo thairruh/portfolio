@@ -4,7 +4,7 @@ import FolderStack from "../components/portfolio/FolderStack";
 
 export default function Home() {
   return (
-    <main className="h-svh overflow-hidden bg-[#F3EED8]">
+    <main className=" grid-paper h-svh overflow-hidden">
       <Hero />
       <FolderStack />
     </main>

@@ -12,17 +12,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+
+@font-face {
+    font-family: "moresugar";
+    src: url("/fonts/MoreSugar-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'moresugar', 'Times New Roman', Times, serif;
 }
 
 html,
@@ -34,4 +36,22 @@ body {
 
 body {
   overflow: hidden;
+}
+
+.grid-paper {
+    background-color: #f6ecd9;
+
+    background-image:
+        linear-gradient(
+            to right,
+            #d9d0c2 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            #d9d0c2 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
 }
