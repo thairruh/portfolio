@@ -12,9 +12,7 @@ export default function AboutSection() {
 
             <div>
             <p className="text-lg leading-8">
-                I’m Thaira, a computer science student and
-                developer interested in combining technology,
-                design, and creativity.
+                aouwifhnuaqhnouafvhbouaqwfvhouqwafghvcuajzbvgaow
             </p>
             </div>
         </div>

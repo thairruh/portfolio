@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="flex min-h-[60vh] items-center justify-center px-6">
+        <section className="flex min-h-[60vh] items-center justify-center px-6 ">
         <div className="relative w-[min(80vw,800px)]">
             <img
                 src="/stamp.png"
@@ -18,7 +18,7 @@ export default function Hero() {
             >
                 <h1
                 className="
-                    text-5xl font-bold leading-tight
+                    text-5xl  leading-tight
                     text-[#4A102A]
                     sm:text-6xl
                     md:text-7xl

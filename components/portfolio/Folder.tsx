@@ -28,11 +28,30 @@ export default function Folder({
     return (
         <article
             className={`
-                relative flex min-h-14 flex-col
-                ${isOpen ? "flex-1" : "flex-none"}
+                relative flex min-h-14 basis-0 flex-col
+                shadow-[0_-10px_18px_-8px_rgba(0,0,0,0.35)]
+                transition-[flex-grow] duration-500 ease-in-out
+                ${isOpen ? "grow" : "grow-0"}
             `}
             style={{ backgroundColor: color }}
         >
+
+            {/* Paper texture */}
+            <div
+                aria-hidden="true"
+                className="
+                pointer-events-none
+                absolute inset-0 z-0
+                opacity-[0.12]
+                mix-blend-multiply
+                "
+                style={{
+                backgroundImage: "url('paper-noise.png')",
+                backgroundRepeat: "repeat",
+                backgroundSize: "180px 180px",
+                }}
+            />
+
         <button
             type="button"
             onClick={() => onToggle(id)}
@@ -42,8 +61,8 @@ export default function Folder({
             <span
             className={`
                 absolute top-0
-                h-30 w-70
-                -translate-y-1/2
+                h-22 w-80
+                -translate-y-22
                 ${tabPosition}
             `}
             >
@@ -53,13 +72,14 @@ export default function Folder({
                 absolute inset-0
                 origin-bottom
                 rounded-t-2xl
-                [transform:perspective(12rem)_rotateX(12deg)]
+                transform-[perspective(12rem)_rotateX(12deg)]
+                shadow-[0_-8px_12px_-2px_rgba(0,0,0,0.25)]
                 "
                 style={{ backgroundColor: color }}
             />
 
             {/* Tab text */}
-            <span className="relative z-10 flex h-full items-center justify-center">
+            <span className="relative z-10 flex h-full items-center justify-center text-4xl">
                 {title}
             </span>
             </span>
