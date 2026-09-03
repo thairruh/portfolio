@@ -33,36 +33,50 @@ export default function FolderStack() {
             : folderOrder.indexOf(activeFolder);
 
     function handleToggle(id: FolderId) {
-        if (closeTimer.current) {
-            clearTimeout(closeTimer.current);
-            closeTimer.current = null;
-        }
-
-        // Clicking the currently active folder closes the stack
-        if (activeFolder === id) {
-            setIsClosing(true);
-
-            closeTimer.current = setTimeout(() => {
-                setActiveFolder(null);
-                setIsClosing(false);
-                closeTimer.current = null;
-            }, ANIMATION_DURATION);
-
-            return;
-        }
-
-        // Open/switch to another folder
-        setIsClosing(false);
-        setActiveFolder(id);
+    if (closeTimer.current) {
+        clearTimeout(closeTimer.current);
+        closeTimer.current = null;
     }
+
+    // Clicking active folder closes it
+    if (activeFolder === id) {
+        closeFolder();
+        return;
+    }
+
+    // Open/switch folders
+    setIsClosing(false);
+    setActiveFolder(id);
+}
+    function closeFolder() {
+    if (activeFolder === null || isClosing) return;
+
+    if (closeTimer.current) {
+        clearTimeout(closeTimer.current);
+    }
+
+    setIsClosing(true);
+
+    closeTimer.current = setTimeout(() => {
+        setActiveFolder(null);
+        setIsClosing(false);
+        closeTimer.current = null;
+    }, ANIMATION_DURATION);
+}
 
     return (
         <section
-            className="
-                absolute inset-0
-                overflow-hidden
-            "
-        >
+    onClick={(e) => {
+        if (e.target === e.currentTarget) {
+            closeFolder();
+        }
+    }}
+    className="
+        absolute
+        inset-0
+        overflow-hidden
+    "
+>
             <Folder
                 id="about"
                 index={0}
