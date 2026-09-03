@@ -121,7 +121,7 @@ export default function Folder({
 
                     w-full
                     shrink-0
-                    text-white
+                    text-[#F3EED8]
                 "
             >
                 {/* Folder tab */}

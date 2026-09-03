@@ -1,5 +1,6 @@
 import Hero from "../components/portfolio/Hero";
 import FolderStack from "../components/portfolio/FolderStack";
+import Links from "../components/portfolio/Links";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                 overflow-hidden
             "
         >
+            <Links />
             <Hero />
             <FolderStack />
         </main>

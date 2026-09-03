@@ -21,10 +21,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "ukiz";
+    src: url("/fonts/UKIJQol_Tuz.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'ukiz', 'Times New Roman', Times, serif;
+}
+
 h1 {
   font-family: 'moresugar', 'Times New Roman', Times, serif;
 }
-
 
 html,
 body {
