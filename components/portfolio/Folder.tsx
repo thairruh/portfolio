@@ -77,7 +77,7 @@ export default function Folder({
                 [--folder-top-space:3.25rem]
                 [--folder-open-gap:1.45rem]
 
-                md:[--folder-closed-strip:3.40rem]
+                md:[--folder-closed-strip:3.20rem]
                 md:[--folder-top-space:clamp(3rem,10.5svh,5rem)]
                 md:[--folder-open-gap:clamp(1.75rem,4svh,4.25rem)]
 
@@ -92,21 +92,6 @@ export default function Folder({
                 zIndex: index + 1,
             }}
         >
-            {/* Paper texture */}
-            <div
-                aria-hidden="true"
-                className="
-                    pointer-events-none
-                    absolute inset-0 z-0
-                    opacity-[0.12]
-                    mix-blend-multiply
-                "
-                style={{
-                    backgroundImage: "url('/paper-noise.png')",
-                    backgroundRepeat: "repeat",
-                    backgroundSize: "180px 180px",
-                }}
-            />
 
             {/* Folder header / clickable strip */}
             <button

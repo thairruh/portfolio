@@ -46,7 +46,7 @@ export default function Links() {
                 border-dashed
                 border-[#57062F]
 
-                bg-[#F8E7A9]
+                bg-[#FFEBAE]
 
                 rotate-[11deg]
 
