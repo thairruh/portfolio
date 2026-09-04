@@ -84,7 +84,7 @@ export default function TechnologiesSection() {
                                         transition-transform
                                         duration-200
 
-                                        hover:-translate-y-1
+                                        hover:-translate-y-0.5
                                     "
                                 >
                                     <img

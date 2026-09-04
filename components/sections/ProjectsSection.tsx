@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { createPortal } from "react-dom";   
 
 import ProjectCard from "../portfolio/ProjectCard";
 
@@ -469,89 +470,109 @@ export default function ProjectsSection() {
             </div>
 
             {/* VIDEO MODAL */}
-            {activeVideo && (
-                <div
-                    className="
-                        fixed
-                        inset-0
-                        z-100
-
-                        flex
-                        items-center
-                        justify-center
-
-                        bg-black/75
-                        p-5
-                    "
-                    onClick={() =>
-                        setActiveVideo(null)
-                    }
-                >
+            {activeVideo &&
+                createPortal(
                     <div
                         className="
-                            relative
-                            w-full
-                            max-w-250
+                            fixed
+                            inset-0
+                            z-[9999]
+
+                            flex
+                            items-center
+                            justify-center
+
+                            bg-black/80
+                            p-4
+                            md:p-8
                         "
-                        onClick={(event) =>
-                            event.stopPropagation()
-                        }
+                        onClick={() => setActiveVideo(null)}
                     >
-                        <button
-                            type="button"
-                            onClick={() =>
-                                setActiveVideo(
-                                    null
-                                )
-                            }
-                            aria-label="Close video"
+                        <div
                             className="
-                                absolute
-                                -right-1
-                                -top-12
+                                relative
 
-                                text-4xl
-                                text-white
+                                flex
+                                max-h-[92vh]
+                                max-w-[92vw]
 
-                                transition-transform
-                                duration-200
-
-                                hover:scale-110
+                                flex-col
+                                items-center
+                                justify-center
                             "
+                            onClick={(event) =>
+                                event.stopPropagation()
+                            }
                         >
-                            ×
-                        </button>
+                            {/* CLOSE BUTTON */}
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    setActiveVideo(null)
+                                }
+                                aria-label="Close video"
+                                className="
+                                    absolute
+                                    -right-2
+                                    -top-12
+                                    z-10
 
-                        <video
-                            src={
-                                activeVideo.src
-                            }
-                            controls
-                            autoPlay
-                            playsInline
-                            className="
-                                max-h-[85vh]
-                                w-full
-                                rounded-xl
-                                bg-black
-                            "
-                        />
+                                    flex
+                                    h-10
+                                    w-10
+                                    items-center
+                                    justify-center
 
-                        <p
-                            className="
-                                mt-3
-                                text-center
-                                text-lg
-                                text-white
-                            "
-                        >
-                            {
-                                activeVideo.title
-                            }
-                        </p>
-                    </div>
-                </div>
-            )}
+                                    rounded-full
+                                    bg-black/60
+
+                                    text-3xl
+                                    text-white
+
+                                    transition-transform
+                                    duration-200
+
+                                    hover:scale-110
+                                "
+                            >
+                                ×
+                            </button>
+
+                            <video
+                                src={activeVideo.src}
+                                controls
+                                autoPlay
+                                playsInline
+                                className="
+                                    block
+
+                                    max-h-[82vh]
+                                    max-w-[90vw]
+
+                                    h-auto
+                                    w-auto
+
+                                    rounded-xl
+                                    bg-black
+
+                                    object-contain
+                                "
+                            />
+
+                            <p
+                                className="
+                                    mt-3
+                                    text-center
+                                    text-lg
+                                    text-white
+                                "
+                            >
+                                {activeVideo.title}
+                            </p>
+                        </div>
+                    </div>,
+                    document.body
+                )}
         </section>
     );
 }
