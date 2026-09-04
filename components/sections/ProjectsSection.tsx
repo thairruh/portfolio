@@ -1,165 +1,117 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
 import ProjectCard from "../portfolio/ProjectCard";
 
-const projects = [
-    {
-        title: "Knights Records",
-        description:
-            "Worked on the website for Knights Records, UCF's student-run mock record label.",
-        image: "/projects/knights-records.png",
-        color: "#a16f9d",
-        technologies: [
-            "Next.js",
-            "React",
-            "TypeScript",
-            "Tailwind CSS",
-            "PostgreSQL",
-            "Prisma",
-        ],
-        link: "",
-    },
-    {
-        title: "SASE UCF",
-        description:
-            "Built the event management system for the Society of Asian Scientists & Engineers UCF's official website.",
-        image: "/sase-ucf.png",
-        color: "#82d1ab",
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Supabase",
-            "Tailwind CSS",
-        ],
-        link: "https://ucfsase.com/",
-    },
-    {
-        title: "Book Nook",
-        description:
-            "A mobile app where you must read books in order to decorate your cozy space.",
-        image: "/book-nook.png",
-        color: "#32289C",
-        technologies: [
-            "React Native",
-            "Expo",
-            "TypeScript",
-            "Firebase",
-            "NativeWind",
-        ],
-        link: "https://www.canva.com/design/DAHDIZSXHf4/Hsj3Avm1TP2RIJ0fntWoTw/view?utm_content=DAHDIZSXHf4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2faf69a2f3",
-    },
-    {
-        title: "HandScape",
-        description:
-            "An interactive 3D sandbox in which users can spawn and manipulate objects through hand gestures.",
-        image: "/projects/handscape.png",
-        color: "#71354E",
-        technologies: [
-            "Next.js",
-            "React",
-            "Three.js",
-            "MediaPipe",
-        ],
-        link: "https://devpost.com/software/handscape-r5yxkq",
-    },
-    {
-        title: "Music Match",
-        description:
-            "A music-based guessing game featuring artist matching and leaderboards.",
-        image: "/projects/music-match.png",
-        color: "#DB9857",
-        technologies: [
-            "Flask",
-            "Python",
-            "SQLite",
-            "JavaScript",
-            "iTunes API",
-        ],
-        link: "",
-    },
-    {
-        title: "I'm Human",
-        description:
-            "A very annoying login page that requires you to prove you're human by solving a series of challenges.",
-        image: "/projects/leetfield.png",
-        color: "#557A68",
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Canvas",
-            "Prisma",
-        ],
-        link: "",
-    },
-    {
-        title: "Portfolio",
-        description:
-            "You're looking at it right now! My personal website to show off my projects and experience.",
-        image: "/portfolio.png",
-        color: "#32289C",
-        technologies: [
-            "Next.js",
-            "React",
-            "TypeScript",
-            "Tailwind CSS",
-        ],
-        link: "",
-    },
-];
+import { projects } from "@/data/projects";
+import { edits } from "@/data/edits";
+
+type Showcase = "code" | "edits";
+
+type ActiveVideo = {
+    src: string;
+    title: string;
+} | null;
 
 export default function ProjectsSection() {
-    const carouselRef = useRef<HTMLDivElement>(null);
+    const carouselRef =
+        useRef<HTMLDivElement>(null);
 
-    function scroll(direction: "left" | "right") {
-    const carousel = carouselRef.current;
+    const [showcase, setShowcase] =
+        useState<Showcase>("code");
 
-    if (!carousel) return;
+    const [activeVideo, setActiveVideo] =
+        useState<ActiveVideo>(null);
 
-    const cards = Array.from(
-        carousel.querySelectorAll<HTMLElement>("[data-project-card]")
-    );
+    const activeProjects =
+        showcase === "code"
+            ? projects
+            : edits;
 
-    if (cards.length === 0) return;
+    function changeShowcase(
+        nextShowcase: Showcase
+    ) {
+        if (nextShowcase === showcase) return;
 
-    const carouselCenter =
-        carousel.scrollLeft + carousel.clientWidth / 2;
+        setShowcase(nextShowcase);
 
-    let currentIndex = 0;
-    let smallestDistance = Infinity;
+        carouselRef.current?.scrollTo({
+            left: 0,
+            behavior: "smooth",
+        });
+    }
 
-    cards.forEach((card, index) => {
-        const cardCenter =
-            card.offsetLeft + card.offsetWidth / 2;
+    function scroll(
+        direction: "left" | "right"
+    ) {
+        const carousel =
+            carouselRef.current;
 
-        const distance = Math.abs(cardCenter - carouselCenter);
+        if (!carousel) return;
 
-        if (distance < smallestDistance) {
-            smallestDistance = distance;
-            currentIndex = index;
-        }
-    });
+        const cards = Array.from(
+            carousel.querySelectorAll<HTMLElement>(
+                "[data-project-card]"
+            )
+        );
 
-    const visibleCards = window.innerWidth >= 1024 ? 3 : 1;
+        if (cards.length === 0) return;
 
-    const targetIndex =
-        direction === "right"
-            ? Math.min(
-                  currentIndex + visibleCards,
-                  cards.length - 1
-              )
-            : Math.max(
-                  currentIndex - visibleCards,
-                  0
-              );
+        const carouselCenter =
+            carousel.scrollLeft +
+            carousel.clientWidth / 2;
 
-    cards[targetIndex].scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-    });
-}
+        let currentIndex = 0;
+        let smallestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+            const cardCenter =
+                card.offsetLeft +
+                card.offsetWidth / 2;
+
+            const distance = Math.abs(
+                cardCenter -
+                    carouselCenter
+            );
+
+            if (
+                distance <
+                smallestDistance
+            ) {
+                smallestDistance =
+                    distance;
+
+                currentIndex = index;
+            }
+        });
+
+        const visibleCards =
+            window.innerWidth >= 1024
+                ? 3
+                : 1;
+
+        const targetIndex =
+            direction === "right"
+                ? Math.min(
+                      currentIndex +
+                          visibleCards,
+                      cards.length - 1
+                  )
+                : Math.max(
+                      currentIndex -
+                          visibleCards,
+                      0
+                  );
+
+        cards[
+            targetIndex
+        ].scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+        });
+    }
 
     return (
         <section
@@ -170,26 +122,201 @@ export default function ProjectsSection() {
                 max-w-[1500px]
 
                 -translate-y-8
+
                 md:-translate-y-10
                 lg:-translate-y-12
             "
         >
+            {/* DESKTOP SHOWCASE TOGGLE */}
+            <div
+                className="
+                    absolute
+                    top-[3%]
+                    z-40
+
+                    hidden
+                    flex-col
+                    gap-2
+
+                    lg:flex
+
+                    lg:left-[-2rem]
+                    xl:left-[-5rem]
+                    2xl:left-[-7rem]
+                "
+            >
+                <button
+                    type="button"
+                    onClick={() =>
+                        changeShowcase(
+                            "code"
+                        )
+                    }
+                    aria-pressed={
+                        showcase === "code"
+                    }
+                    className={`
+                        w-[5.5rem]
+                        rounded-lg
+
+                        px-3
+                        py-2
+
+                        text-sm
+
+                        transition-all
+                        duration-200
+
+                        hover:scale-105
+
+                        ${
+                            showcase ===
+                            "code"
+                                ? "bg-[#F3EED8] text-black shadow-md"
+                                : "bg-[#6E7040] text-[#F3EED8]"
+                        }
+                    `}
+                >
+                    DEV
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() =>
+                        changeShowcase(
+                            "edits"
+                        )
+                    }
+                    aria-pressed={
+                        showcase ===
+                        "edits"
+                    }
+                    className={`
+                        w-[5.5rem]
+                        rounded-lg
+
+                        px-3
+                        py-2
+
+                        text-sm
+
+                        transition-all
+                        duration-200
+
+                        hover:scale-105
+
+                        ${
+                            showcase ===
+                            "edits"
+                                ? "bg-[#F3EED8] text-black shadow-md"
+                                : "bg-[#6E7040] text-[#F3EED8]"
+                        }
+                    `}
+                >
+                    EDITS
+                </button>
+            </div>
+
+            {/* MOBILE SHOWCASE TOGGLE */}
+            <div
+                className="
+                    mb-2
+
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+
+                    lg:hidden
+                "
+            >
+                <button
+                    type="button"
+                    onClick={() =>
+                        changeShowcase(
+                            "code"
+                        )
+                    }
+                    aria-pressed={
+                        showcase === "code"
+                    }
+                    className={`
+                        rounded-lg
+
+                        px-4
+                        py-2
+
+                        text-sm
+
+                        transition-colors
+                        duration-200
+
+                        ${
+                            showcase ===
+                            "code"
+                                ? "bg-[#F3EED8] text-black"
+                                : "bg-[#6E7040] text-[#F3EED8]"
+                        }
+                    `}
+                >
+                    DEV
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() =>
+                        changeShowcase(
+                            "edits"
+                        )
+                    }
+                    aria-pressed={
+                        showcase ===
+                        "edits"
+                    }
+                    className={`
+                        rounded-lg
+
+                        px-4
+                        py-2
+
+                        text-sm
+
+                        transition-colors
+                        duration-200
+
+                        ${
+                            showcase ===
+                            "edits"
+                                ? "bg-[#F3EED8] text-black"
+                                : "bg-[#6E7040] text-[#F3EED8]"
+                        }
+                    `}
+                >
+                    EDITS
+                </button>
+            </div>
+
             {/* DESKTOP LEFT ARROW */}
             <button
                 type="button"
-                onClick={() => scroll("left")}
+                onClick={() =>
+                    scroll("left")
+                }
                 aria-label="Previous projects"
                 className="
                     absolute
                     left-0
                     top-1/2
                     z-30
+
                     hidden
                     -translate-y-1/2
 
                     text-4xl
+
                     transition-transform
                     duration-200
+
                     hover:scale-110
 
                     lg:block
@@ -227,39 +354,61 @@ export default function ProjectsSection() {
                         lg:px-8
                     "
                 >
-                    {projects.map((project) => (
-                        <div
-                            key={project.title}
-                            data-project-card
-                            className="
-                                shrink-0
-                                basis-full
+                    {activeProjects.map(
+                        (project) => (
+                            <div
+                                key={
+                                    project.title
+                                }
+                                data-project-card
+                                className="
+                                    shrink-0
+                                    basis-full
 
-                                lg:basis-[calc((100%_-_10rem_-_4rem)/3)]
-                            "
-                        >
-                            <ProjectCard {...project} />
-                        </div>
-                    ))}
+                                    lg:basis-[calc((100%_-_10rem_-_4rem)/3)]
+                                "
+                            >
+                                <ProjectCard
+                                    {...project}
+                                    onOpenVideo={(
+                                        video,
+                                        title
+                                    ) => {
+                                        setActiveVideo(
+                                            {
+                                                src: video,
+                                                title,
+                                            }
+                                        );
+                                    }}
+                                />
+                            </div>
+                        )
+                    )}
                 </div>
             </div>
 
             {/* DESKTOP RIGHT ARROW */}
             <button
                 type="button"
-                onClick={() => scroll("right")}
+                onClick={() =>
+                    scroll("right")
+                }
                 aria-label="Next projects"
                 className="
                     absolute
                     right-0
                     top-1/2
                     z-30
+
                     hidden
                     -translate-y-1/2
 
                     text-4xl
+
                     transition-transform
                     duration-200
+
                     hover:scale-110
 
                     lg:block
@@ -273,6 +422,7 @@ export default function ProjectsSection() {
             <div
                 className="
                     mt-2
+
                     flex
                     items-center
                     justify-center
@@ -283,12 +433,16 @@ export default function ProjectsSection() {
             >
                 <button
                     type="button"
-                    onClick={() => scroll("left")}
+                    onClick={() =>
+                        scroll("left")
+                    }
                     aria-label="Previous project"
                     className="
                         text-3xl
+
                         transition-transform
                         duration-200
+
                         hover:scale-110
                     "
                 >
@@ -297,18 +451,107 @@ export default function ProjectsSection() {
 
                 <button
                     type="button"
-                    onClick={() => scroll("right")}
+                    onClick={() =>
+                        scroll("right")
+                    }
                     aria-label="Next project"
                     className="
                         text-3xl
+
                         transition-transform
                         duration-200
+
                         hover:scale-110
                     "
                 >
                     →
                 </button>
             </div>
+
+            {/* VIDEO MODAL */}
+            {activeVideo && (
+                <div
+                    className="
+                        fixed
+                        inset-0
+                        z-[100]
+
+                        flex
+                        items-center
+                        justify-center
+
+                        bg-black/75
+                        p-5
+                    "
+                    onClick={() =>
+                        setActiveVideo(null)
+                    }
+                >
+                    <div
+                        className="
+                            relative
+                            w-full
+                            max-w-[1000px]
+                        "
+                        onClick={(event) =>
+                            event.stopPropagation()
+                        }
+                    >
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setActiveVideo(
+                                    null
+                                )
+                            }
+                            aria-label="Close video"
+                            className="
+                                absolute
+                                -right-1
+                                -top-12
+
+                                text-4xl
+                                text-white
+
+                                transition-transform
+                                duration-200
+
+                                hover:scale-110
+                            "
+                        >
+                            ×
+                        </button>
+
+                        <video
+                            src={
+                                activeVideo.src
+                            }
+                            controls
+                            autoPlay
+                            playsInline
+                            className="
+                                max-h-[85vh]
+                                w-full
+                                rounded-xl
+                                bg-black
+                            "
+                        />
+
+                        <p
+                            className="
+                                mt-3
+                                text-center
+                                text-lg
+                                text-white
+                            "
+                        >
+                            {
+                                activeVideo.title
+                            }
+                        </p>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

@@ -1,23 +1,114 @@
+// data/projects.ts
+
 export const projects = [
+    {
+        title: "Knights Records",
+        description:
+            "Worked on the website for Knights Records, UCF's student-run mock record label.",
+        image: "/projects/knights-records.png",
+        color: "#a16f9d",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "PostgreSQL",
+            "Prisma",
+        ],
+        link: "",
+        type: "code" as const,
+    },
+    {
+        title: "SASE UCF",
+        description:
+            "Built the event management system for the Society of Asian Scientists & Engineers UCF's official website.",
+        image: "/sase-ucf.png",
+        color: "#82d1ab",
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "Supabase",
+            "Tailwind CSS",
+        ],
+        link: "https://ucfsase.com/",
+        type: "code" as const,
+    },
     {
         title: "Book Nook",
         description:
-        "A gamified journaling app with collectible stickers, room customization, and Firebase-powered user data.",
+            "A mobile app where you must read books in order to decorate your cozy space.",
+        image: "/book-nook.png",
+        color: "#32289C",
         technologies: [
-        "React Native",
-        "TypeScript",
-        "Firebase",
+            "React Native",
+            "Expo",
+            "TypeScript",
+            "Firebase",
+            "NativeWind",
         ],
+        link: "https://www.canva.com/design/DAHDIZSXHf4/Hsj3Avm1TP2RIJ0fntWoTw/view?utm_content=DAHDIZSXHf4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2faf69a2f3",
+        type: "code" as const,
+    },
+    {
+        title: "HandScape",
+        description:
+            "An interactive 3D sandbox in which users can spawn and manipulate objects through hand gestures.",
+        image: "/projects/handscape.png",
+        color: "#71354E",
+        technologies: [
+            "Next.js",
+            "React",
+            "Three.js",
+            "MediaPipe",
+        ],
+        link: "https://devpost.com/software/handscape-r5yxkq",
+        type: "code" as const,
     },
     {
         title: "Music Match",
         description:
-        "A music guessing game that uses the iTunes Search API and stores leaderboard scores.",
+            "A music-based guessing game featuring artist matching and leaderboards.",
+        image: "/projects/music-match.png",
+        color: "#DB9857",
         technologies: [
-        "Flask",
-        "Python",
-        "SQLite",
-        "JavaScript",
+            "Flask",
+            "Python",
+            "SQLite",
+            "JavaScript",
+            "iTunes API",
         ],
+        link: "",
+        type: "code" as const,
+    },
+    {
+        title: "I'm Human",
+        description:
+            "A very annoying login page that requires you to prove you're human by solving a series of challenges.",
+        image: "/projects/leetfield.png",
+        color: "#557A68",
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Canvas",
+            "Prisma",
+        ],
+        link: "",
+        type: "code" as const,
+    },
+    {
+        title: "Portfolio",
+        description:
+            "You're looking at it right now! My personal website to show off my projects and experience.",
+        image: "/portfolio.png",
+        color: "#32289C",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+        ],
+        link: "",
+        type: "code" as const,
     },
 ];
