@@ -1,42 +1,5 @@
 import { technologies } from "@/data/technologies";
 
-const iconMap: Record<string, string> = {
-    Python: "/tech/python.svg",
-    Java: "/tech/java.svg",
-    C: "/tech/c.svg",
-    JavaScript: "/tech/javascript.svg",
-    HTML: "/tech/html.svg",
-    CSS: "/tech/css.svg",
-    Typescript: "/tech/typescript.svg",
-    SQL: "/tech/sql.svg",
-    "C++": "/tech/cpp.svg",
-
-    React: "/tech/react.svg",
-    "Next.js": "/tech/nextjs.svg",
-    "Tailwind CSS": "/tech/tailwind.svg",
-    "Node.js": "/tech/nodejs.svg",
-    Vite: "/tech/vite.svg",
-    "React Native": "/tech/react.svg",
-    Flask: "/tech/flask.svg",
-    "Three.js": "/tech/threejs.svg",
-    "Phaser.js": "/tech/phaser.svg",
-
-    Git: "/tech/git.svg",
-    GitHub: "/tech/github.svg",
-    "VS Code": "/tech/vscode.svg",
-    Figma: "/tech/figma.svg",
-    Firebase: "/tech/firebase.svg",
-    SQLite: "/tech/sqlite.svg",
-    Godot: "/tech/godot.svg",
-    "Adobe After Effects": "/tech/after-effects.svg",
-    "Adobe Premiere Pro": "/tech/premiere-pro.svg",
-};
-
-const tapeMap: Record<string, string> = {
-    LANGUAGES: "/tape-blue.png",
-    "FRAMEWORKS/PACKAGES": "/tape-peach.png",
-    TOOLS: "/tape-purple.png",
-};
 
 export default function TechnologiesSection() {
     return (
@@ -44,17 +7,19 @@ export default function TechnologiesSection() {
             className="
                 mx-auto
                 w-full
-                max-w-300
+                max-w-[1350px]
             "
         >
             <div
                 className="
                     grid
                     grid-cols-1
-                    gap-12
+                    gap-8
+
                     md:grid-cols-2
+
                     lg:grid-cols-3
-                    lg:gap-14
+                    lg:gap-13
                 "
             >
                 {technologies.map((group) => (
@@ -62,95 +27,119 @@ export default function TechnologiesSection() {
                         key={group.title}
                         className="
                             relative
-                            pt-10
+
+                            min-h-[290px]
+
+                            rounded
+                            bg-[#F3EED8]
+
+                            px-7
+                            pb-6
+                            pt-6
+
+                            shadow-[0_8px_14px_rgba(0,0,0,0.18)]
+
+                            lg:min-h-[310px]
+                            lg:px-8
+                            lg:pt-7
                         "
                     >
-                        {/* CARD */}
-                        <div
+                        {/* TITLE */}
+                        <h3
                             className="
-                                min-h-82.5
-                                rounded-[1.25rem]
-                                bg-[#F3EED8]
-                                px-6
-                                pb-7
-                                pt-14
-                                shadow-[0_8px_14px_rgba(0,0,0,0.18)]
+                                mb-6
+
+                                text-2xl
+
+                                lg:text-[1.65rem]
                             "
                         >
-                            {/* ICON GRID */}
-                            <div
-                                className="
-                                    grid
-                                    grid-cols-3
-                                    place-items-center
-                                    gap-x-5
-                                    gap-y-7
-                                "
-                            >
-                                {group.tools.map((tool) => (
-                                    <div
-                                        key={tool.name}
+                            {group.title}
+                        </h3>
+
+                        {/* ICON GRID */}
+                        <div
+                            className="
+                                grid
+                                grid-cols-3
+                                place-items-center
+
+                                gap-x-6
+                                gap-y-5
+                            "
+                        >
+                            {group.tools.map((tool) => (
+                                <div
+                                    key={tool.name}
+                                    className="
+                                        group/tool
+
+                                        flex
+                                        h-15
+                                        w-15
+
+                                        items-center
+                                        justify-center
+
+                                        transition-transform
+                                        duration-200
+
+                                        hover:-translate-y-1
+                                    "
+                                >
+                                    <img
+                                        src={tool.icon}
+                                        alt={tool.name}
+                                        title={tool.name}
                                         className="
-                                            flex
-                                            h-16
-                                            w-16
-                                            items-center
-                                            justify-center
+                                            max-h-full
+                                            max-w-full
+                                            object-contain
                                         "
-                                    >
-                                        <img
-                                            src={iconMap[tool.name]}
-                                            alt={tool.name}
-                                            title={tool.name}
-                                            className="
-                                                max-h-full
-                                                max-w-full
-                                                object-contain
-                                            "
-                                        />
-                                    </div>
-                                ))}
-                            </div>
+                                    />
+                                </div>
+                            ))}
                         </div>
 
-                        {/* TAPE */}
-                        <div
+                        {/* DECORATIVE TAPE */}
+                        <img
+                            src="/tape.png"
+                            alt=""
+                            aria-hidden="true"
                             className="
                                 pointer-events-none
                                 absolute
-                                left-1/2
-                                top-0
-                                z-10
-                                w-[78%]
-                                -translate-x-1/2
-                            "
-                        >
-                            <img
-                                src={tapeMap[group.title]}
-                                alt=""
-                                aria-hidden="true"
-                                className="
-                                    h-auto
-                                    w-full
-                                "
-                            />
 
-                            <h3
-                                className="
-                                    absolute
-                                    inset-0
-                                    flex
-                                    items-center
-                                    justify-center
-                                    px-4
-                                    text-center
-                                    text-xl
-                                    md:text-2xl
-                                "
-                            >
-                                {group.title}
-                            </h3>
-                        </div>
+                                -top-5
+                                right-7
+                                z-20
+
+                                w-24
+                                rotate-6
+
+                                lg:w-28
+                            "
+                        />
+
+                        {/* STICKER */}
+                        <img
+                            src="/star-sticker.png"
+                            alt=""
+                            aria-hidden="true"
+                            className="
+                                pointer-events-none
+                                absolute
+
+                                -bottom-4
+                                -left-3
+                                z-20
+
+                                w-16
+                                -rotate-12
+
+                                lg:w-18
+                            "
+                        />
                     </article>
                 ))}
             </div>
