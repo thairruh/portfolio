@@ -102,7 +102,7 @@ export default function Folder({
                     relative z-20
 
                     h-[2.6rem]
-                    md:h-[3.75rem]
+                    md:h-15
 
                     w-full
                     shrink-0
@@ -115,7 +115,7 @@ export default function Folder({
                         absolute top-0
 
                         h-[2.7rem]
-                        w-[9rem]
+                        w-36
 
                         md:h-[clamp(3.75rem,8svh,5.5rem)]
                         md:w-[clamp(10rem,25vw,20rem)]
@@ -129,7 +129,7 @@ export default function Folder({
                     {/* Tab background */}
                     <span
                         className="
-                            absolute inset-x-0 top-0 -bottom-[2px]
+                            absolute inset-x-0 top-0 -bottom-0.5
 
                             origin-bottom
                             rounded-t-2xl
@@ -185,7 +185,7 @@ export default function Folder({
                     className={`
                         mx-auto
                         w-full
-                        max-w-[1200px]
+                        max-w-300
 
                         px-5
                         sm:px-8

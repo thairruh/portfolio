@@ -44,7 +44,7 @@ export default function TechnologiesSection() {
             className="
                 mx-auto
                 w-full
-                max-w-[1200px]
+                max-w-300
             "
         >
             <div
@@ -68,7 +68,7 @@ export default function TechnologiesSection() {
                         {/* CARD */}
                         <div
                             className="
-                                min-h-[330px]
+                                min-h-82.5
                                 rounded-[1.25rem]
                                 bg-[#F3EED8]
                                 px-6

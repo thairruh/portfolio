@@ -48,7 +48,7 @@ export default function Links() {
 
                 bg-[#FFEBAE]
 
-                rotate-[11deg]
+                rotate-11
 
                 md:top-7
                 md:right-8

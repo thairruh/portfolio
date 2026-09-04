@@ -80,10 +80,10 @@ export default function ProjectCard({
                 mx-auto
 
                 w-[75vw]
-                max-w-[360px]
+                max-w-90
 
                 sm:w-[72vw]
-                sm:max-w-[390px]
+                sm:max-w-97.5
 
                 lg:w-full
                 lg:max-w-none
@@ -97,26 +97,26 @@ export default function ProjectCard({
                     w-full
                     -translate-x-1/2
 
-                    min-h-[460px]
+                    min-h-115
                     rounded-[1.25rem]
                     bg-[#EAEAEA]
 
                     px-5
                     pb-6
-                    pt-[220px]
+                    pt-55
 
                     shadow-[0_8px_12px_rgba(0,0,0,0.18)]
 
-                    sm:min-h-[480px]
+                    sm:min-h-120
                     sm:px-6
-                    sm:pt-[235px]
+                    sm:pt-58.75
 
                     lg:w-[108%]
-                    lg:min-h-[505px]
-                    lg:rounded-[1.5rem]
+                    lg:min-h-126.25
+                    lg:rounded-3xl
                     lg:px-7
                     lg:pb-8
-                    lg:pt-[255px]
+                    lg:pt-63.75
                 "
             >
                 {/* BINDER HOLES */}
@@ -169,13 +169,13 @@ export default function ProjectCard({
                         absolute
 
                         inset-x-5
-                        top-[110px]
+                        top-27.5
                         bottom-6
 
                         opacity-60
 
                         lg:inset-x-7
-                        lg:top-[135px]
+                        lg:top-33.75
                         lg:bottom-7
                     "
                     style={{
@@ -188,10 +188,10 @@ export default function ProjectCard({
                 <div
                     className="
                         relative
-                        top-[33px]
+                        top-8.25
                         z-10
 
-                        lg:-top-[2px]
+                        lg:-top-0.5
                     "
                 >
                     <h3
@@ -199,7 +199,7 @@ export default function ProjectCard({
                             m-0
 
                             text-[1.55rem]
-                            leading-[36px]
+                            leading-9
 
                             lg:text-3xl
                         "
@@ -212,7 +212,7 @@ export default function ProjectCard({
                             m-0
 
                             text-[0.9rem]
-                            leading-[36px]
+                            leading-9
 
                             lg:text-base
                         "
@@ -227,11 +227,11 @@ export default function ProjectCard({
                                 mt-3
 
                                 text-[0.65rem]
-                                leading-[20px]
+                                leading-5
 
                                 lg:mt-2
                                 lg:text-[0.72rem]
-                                lg:leading-[22px]
+                                lg:leading-5.5
                             "
                         >
                             <span
@@ -251,7 +251,7 @@ export default function ProjectCard({
                                                 relative
                                                 isolate
                                                 inline-block
-                                                px-[2px]
+                                                px-0.5
                                             "
                                         >
                                             {/* HIGHLIGHTER */}
@@ -260,10 +260,10 @@ export default function ProjectCard({
                                                 className="
                                                     absolute
                                                     inset-x-0
-                                                    bottom-[2px]
+                                                    bottom-0.5
                                                     -z-10
 
-                                                    h-[9px]
+                                                    h-2.25
                                                     -rotate-1
 
                                                     bg-[#F2D96B]/70
@@ -297,7 +297,7 @@ export default function ProjectCard({
                     <div
                         className="
                             absolute
-                            bottom-[30px]
+                            bottom-7.5
                             left-5
                             right-5
                             z-10
@@ -309,7 +309,7 @@ export default function ProjectCard({
                             gap-x-2
                             gap-y-0
 
-                            lg:bottom-[36px]
+                            lg:bottom-9
                             lg:left-7
                             lg:right-7
                             lg:gap-x-3
@@ -327,10 +327,10 @@ export default function ProjectCard({
                                         px-1
 
                                         text-[0.72rem]
-                                        leading-[30px]
+                                        leading-7.5
 
                                         lg:text-sm
-                                        lg:leading-[36px]
+                                        lg:leading-9
                                     "
                                 >
                                     {/* HIGHLIGHTER */}
@@ -339,16 +339,16 @@ export default function ProjectCard({
                                         className="
                                             absolute
                                             inset-x-0
-                                            bottom-[6px]
+                                            bottom-1.5
                                             -z-10
 
-                                            h-[13px]
+                                            h-3.25
                                             -rotate-1
 
                                             bg-[#F2D96B]/70
 
-                                            lg:bottom-[8px]
-                                            lg:h-[15px]
+                                            lg:bottom-2
+                                            lg:h-3.75
                                         "
                                     />
 
@@ -472,16 +472,16 @@ export default function ProjectCard({
                     absolute
 
                     left-[57%]
-                    top-[-18px]
+                    -top-4.5
                     z-30
 
                     w-[22%]
-                    max-w-[78px]
+                    max-w-19.5
 
                     -translate-x-1/2
 
                     lg:left-45
-                    lg:top-[-54px]
+                    lg:-top-13.5
                     lg:w-35
                     lg:max-w-none
                 "

@@ -119,7 +119,7 @@ export default function ProjectsSection() {
                 relative
                 mx-auto
                 w-full
-                max-w-[1500px]
+                max-w-375
 
                 -translate-y-8
 
@@ -140,9 +140,9 @@ export default function ProjectsSection() {
 
                     lg:flex
 
-                    lg:left-[-2rem]
-                    xl:left-[-5rem]
-                    2xl:left-[-7rem]
+                    lg:-left-8
+                    xl:-left-20
+                    2xl:-left-28
                 "
             >
                 <button
@@ -156,7 +156,7 @@ export default function ProjectsSection() {
                         showcase === "code"
                     }
                     className={`
-                        w-[5.5rem]
+                        w-22
                         rounded-lg
 
                         px-3
@@ -192,7 +192,7 @@ export default function ProjectsSection() {
                         "edits"
                     }
                     className={`
-                        w-[5.5rem]
+                        w-22
                         rounded-lg
 
                         px-3
@@ -365,7 +365,7 @@ export default function ProjectsSection() {
                                     shrink-0
                                     basis-full
 
-                                    lg:basis-[calc((100%_-_10rem_-_4rem)/3)]
+                                    lg:basis-[calc((100%-10rem-4rem)/3)]
                                 "
                             >
                                 <ProjectCard
@@ -474,7 +474,7 @@ export default function ProjectsSection() {
                     className="
                         fixed
                         inset-0
-                        z-[100]
+                        z-100
 
                         flex
                         items-center
@@ -491,7 +491,7 @@ export default function ProjectsSection() {
                         className="
                             relative
                             w-full
-                            max-w-[1000px]
+                            max-w-250
                         "
                         onClick={(event) =>
                             event.stopPropagation()

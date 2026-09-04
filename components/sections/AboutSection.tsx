@@ -5,7 +5,7 @@ export default function AboutSection() {
                 mx-auto
                 grid
                 w-full
-                max-w-[1200px]
+                max-w-300
                 grid-cols-1
                 items-center
                 gap-6
@@ -21,12 +21,12 @@ export default function AboutSection() {
                     order-2
                     mx-auto
                     w-[88%]
-                    max-w-[430px]
+                    max-w-107.5
                     sm:w-[80%]
-                    sm:max-w-[460px]
+                    sm:max-w-115
                     md:order-1
                     md:w-full
-                    md:max-w-[520px]
+                    md:max-w-130
                 "
             >
                 <img
@@ -50,12 +50,12 @@ export default function AboutSection() {
                     order-1
                     mx-auto
                     w-[92%]
-                    max-w-[460px]
+                    max-w-115
                     sm:w-[88%]
-                    sm:max-w-[500px]
+                    sm:max-w-125
                     md:order-2
                     md:w-full
-                    md:max-w-[520px]
+                    md:max-w-130
                 "
             >
                 <div

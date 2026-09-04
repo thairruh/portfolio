@@ -23,7 +23,7 @@ export default function Hero() {
             shrink-0
 
             md:w-[min(72vw,800px)]
-            md:max-w-[800px]
+            md:max-w-200
             "
         >
             <img

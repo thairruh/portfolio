@@ -25,7 +25,7 @@ export default function ExperienceSection() {
                             {experience.organization}
                         </p>
 
-                        <p className="mt-4 break-words text-sm leading-6 sm:text-base sm:leading-7">
+                        <p className="mt-4 wrap-break-word text-sm leading-6 sm:text-base sm:leading-7">
                             {experience.description}
                         </p>
                     </article>
