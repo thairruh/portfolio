@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 type ProjectCardProps = {
     title: string;
     description: string;
@@ -6,6 +10,11 @@ type ProjectCardProps = {
 
     technologies?: string[];
     credits?: string[];
+
+    award?: {
+        image: string;
+        text: string;
+    };
 
     link?: string;
     video?: string;
@@ -23,6 +32,7 @@ export default function ProjectCard({
     color,
     technologies,
     credits,
+    award,
     link,
     video,
     onOpenVideo,
@@ -71,6 +81,8 @@ export default function ProjectCard({
             "
         />
     );
+
+    const [showAward, setShowAward] = useState(false);
 
     return (
         <article
@@ -466,6 +478,95 @@ export default function ProjectCard({
                     }}
                 >
                     {previewImage}
+                </div>
+            )}
+
+            {/* AWARD */}
+            {award && (
+                <div
+                    className="
+                        group
+                        absolute
+                        -right-5
+                        -bottom-5
+                        z-40
+
+                        lg:-right-7
+                        lg:-bottom-3
+                    "
+                >
+                    <button
+                        type="button"
+                        onClick={() => setShowAward((prev) => !prev)}
+                        aria-expanded={showAward}
+                        aria-label={`Award: ${award.text}`}
+                        className="
+                            block
+                            cursor-pointer
+
+                            transition-transform
+                            duration-200
+
+                            hover:scale-105
+                            focus-visible:scale-105
+                            focus-visible:outline-2
+                            focus-visible:outline-offset-4
+                        "
+                    >
+                        <img
+                            src={award.image}
+                            alt=""
+                            aria-hidden="true"
+                            className="
+                                w-24
+                                rotate-6
+                                drop-shadow-md
+
+                                lg:w-28
+                            "
+                        />
+                    </button>
+
+                    {/* TOOLTIP */}
+                    <div
+                        className={`
+                            pointer-events-none
+                            absolute
+
+                            right-full
+                            top-1/2
+                            mr-1
+                            -translate-y-1/2
+
+                            w-40
+
+                            rounded-xl
+                            bg-[#C6AFCC]
+
+                            px-2
+                            py-2
+
+                            text-xs
+                            leading-snug
+                            text-[#49354E]
+
+                            shadow-lg
+
+                            transition-all
+                            duration-200
+
+                            ${
+                                showAward
+                                    ? "translate-x-0 opacity-100"
+                                    : "translate-x-2 opacity-0"
+                            }
+
+                            group-hover:translate-x-0
+                            group-hover:opacity-100
+                        `}
+                    >
+                        {award.text}
+                    </div>
                 </div>
             )}
 

@@ -535,7 +535,6 @@ export default function ProjectsSection() {
                                     hover:scale-110
                                 "
                             >
-                                ×
                             </button>
 
                             <video

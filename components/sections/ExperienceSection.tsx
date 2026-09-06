@@ -129,7 +129,7 @@ export default function ExperienceSection() {
                         sm:px-8
 
                         lg:gap-12
-                        lg:px-10
+                        lg:px-9
                         lg:py-16
                     "
                 >

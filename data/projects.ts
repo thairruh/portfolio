@@ -47,6 +47,10 @@ export const projects = [
             "NativeWind",
         ],
         link: "https://www.canva.com/design/DAHDIZSXHf4/Hsj3Avm1TP2RIJ0fntWoTw/view?utm_content=DAHDIZSXHf4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2faf69a2f3",
+        award: {
+            image: "/award.png",
+            text: "2nd Place — Girls Who Code UCF Spring Showcase",
+        },
         type: "code" as const,
     },
     {
