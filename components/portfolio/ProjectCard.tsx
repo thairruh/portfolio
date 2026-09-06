@@ -111,7 +111,7 @@ export default function ProjectCard({
                     sm:px-6
                     sm:pt-58.75
 
-                    lg:w-[108%]
+                    lg:w-[110%]
                     lg:min-h-126.25
                     lg:rounded-3xl
                     lg:px-7
@@ -475,12 +475,12 @@ export default function ProjectCard({
                     pointer-events-none
                     absolute
 
-                    left-[57%]
-                    -top-4.5
+                    left-[60%]
+                    -top-13
                     z-30
 
-                    w-[22%]
-                    max-w-19.5
+                    w-[40%]
+                    max-w-60
 
                     -translate-x-1/2
 

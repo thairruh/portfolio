@@ -7,7 +7,7 @@ export default function TechnologiesSection() {
             className="
                 mx-auto
                 w-full
-                max-w-[1350px]
+                max-w-337.5
             "
         >
             <div
@@ -28,7 +28,7 @@ export default function TechnologiesSection() {
                         className="
                             relative
 
-                            min-h-[290px]
+                            min-h-72.5
 
                             rounded
                             bg-[#F3EED8]
@@ -39,7 +39,7 @@ export default function TechnologiesSection() {
 
                             shadow-[0_8px_14px_rgba(0,0,0,0.18)]
 
-                            lg:min-h-[310px]
+                            lg:min-h-77.5
                             lg:px-8
                             lg:pt-7
                         "
@@ -101,46 +101,6 @@ export default function TechnologiesSection() {
                                 </div>
                             ))}
                         </div>
-
-                        {/* DECORATIVE TAPE */}
-                        <img
-                            src="/tape.png"
-                            alt=""
-                            aria-hidden="true"
-                            className="
-                                pointer-events-none
-                                absolute
-
-                                -top-5
-                                right-7
-                                z-20
-
-                                w-24
-                                rotate-6
-
-                                lg:w-28
-                            "
-                        />
-
-                        {/* STICKER */}
-                        <img
-                            src="/star-sticker.png"
-                            alt=""
-                            aria-hidden="true"
-                            className="
-                                pointer-events-none
-                                absolute
-
-                                -bottom-4
-                                -left-3
-                                z-20
-
-                                w-16
-                                -rotate-12
-
-                                lg:w-18
-                            "
-                        />
                     </article>
                 ))}
             </div>

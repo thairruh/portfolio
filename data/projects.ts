@@ -5,7 +5,7 @@ export const projects = [
         title: "Knights Records",
         description:
             "Worked on the website for Knights Records, UCF's student-run mock record label.",
-        image: "/projects/knights-records.png",
+        image: "/kricon.png",
         color: "#a16f9d",
         technologies: [
             "Next.js",
@@ -15,7 +15,7 @@ export const projects = [
             "PostgreSQL",
             "Prisma",
         ],
-        link: "",
+        link: "https://github.com/Knights-Records-UCF/Knights-Record-Website",
         type: "code" as const,
     },
     {
@@ -53,7 +53,7 @@ export const projects = [
         title: "HandScape",
         description:
             "An interactive 3D sandbox in which users can spawn and manipulate objects through hand gestures.",
-        image: "/projects/handscape.png",
+        image: "/handscape.png",
         color: "#71354E",
         technologies: [
             "Next.js",
@@ -68,7 +68,7 @@ export const projects = [
         title: "Music Match",
         description:
             "A music-based guessing game featuring artist matching and leaderboards.",
-        image: "/projects/music-match.png",
+        image: "/music-match.png",
         color: "#DB9857",
         technologies: [
             "Flask",
@@ -77,14 +77,14 @@ export const projects = [
             "JavaScript",
             "iTunes API",
         ],
-        link: "",
+        link: "https://musicmatch.pythonanywhere.com/",
         type: "code" as const,
     },
     {
         title: "I'm Human",
         description:
             "A very annoying login page that requires you to prove you're human by solving a series of challenges.",
-        image: "/projects/leetfield.png",
+        image: "/imhuman.png",
         color: "#557A68",
         technologies: [
             "Next.js",
@@ -93,13 +93,13 @@ export const projects = [
             "Canvas",
             "Prisma",
         ],
-        link: "",
+        link: "https://devpost.com/software/i-swear-i-m-human",
         type: "code" as const,
     },
     {
         title: "Portfolio",
         description:
-            "You're looking at it right now! My personal website to show off my projects and experience.",
+            "You're looking at it right now! My personal website to show off my projects and skills.",
         image: "/portfolio.png",
         color: "#32289C",
         technologies: [

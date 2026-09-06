@@ -103,7 +103,7 @@ export default function AboutSection() {
                             University of Central Florida
                         </span>{" "}
                         with a minor in Digital Media. I enjoy coding, playing
-                        video games, cooking, thrifting, and editing, and I love
+                        video games, cooking, thrifting, and I've also been editing on After Effects for about 7 years. I love
                         looking for opportunities to bring my technical and
                         creative interests together!
 
