@@ -8,7 +8,7 @@ export default function Home() {
             className="
                 relative
                 grid-paper
-                h-svh
+                min-h-dvh
                 overflow-hidden
             "
         >

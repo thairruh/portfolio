@@ -476,7 +476,7 @@ export default function ProjectsSection() {
                         className="
                             fixed
                             inset-0
-                            z-[9999]
+                            z-9999
 
                             flex
                             items-center
