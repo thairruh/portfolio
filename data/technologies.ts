@@ -16,7 +16,7 @@ export const technologies = [
     },
 
     {
-        title: "Frameworks/Libraries",
+        title: "Frameworks & Libraries",
         border: "#D7A67A",
         tools: [
             { name: "React / React Native", icon: "/tech/react.svg" },
@@ -31,7 +31,7 @@ export const technologies = [
     },
 
     {
-        title: "Tools/Platforms",
+        title: "Tools & Technologies",
         border: "#D7A67A",
         tools: [
             { name: "Git", icon: "/tech/git.svg" },
