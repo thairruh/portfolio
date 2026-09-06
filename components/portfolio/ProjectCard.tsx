@@ -180,7 +180,7 @@ export default function ProjectCard({
                     "
                     style={{
                         backgroundImage:
-                            "repeating-linear-gradient(to bottom, transparent 0, transparent 35px, #7CA0C8 35px, #7CA0C8 36px)",
+                            "repeating-linear-gradient(to bottom, transparent 0, transparent 35px, #2E67B2 35px, #2E67B2 36px)",
                     }}
                 />
 

@@ -1,36 +1,248 @@
-import { experiences } from "../../data/experience";
+"use client";
+
+import { useRef } from "react";
+
+import ExperienceCard from "../portfolio/ExperienceCard";
+import { experiences } from "@/data/experience";
 
 export default function ExperienceSection() {
+    const carouselRef = useRef<HTMLDivElement>(null);
+
+    function scroll(direction: "left" | "right") {
+        const carousel = carouselRef.current;
+
+        if (!carousel) return;
+
+        const cards = Array.from(
+            carousel.querySelectorAll<HTMLElement>(
+                "[data-experience-card]"
+            )
+        );
+
+        if (!cards.length) return;
+
+        const carouselCenter =
+            carousel.scrollLeft +
+            carousel.clientWidth / 2;
+
+        let currentIndex = 0;
+        let smallestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+            const cardCenter =
+                card.offsetLeft +
+                card.offsetWidth / 2;
+
+            const distance = Math.abs(
+                cardCenter - carouselCenter
+            );
+
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                currentIndex = index;
+            }
+        });
+
+        const visibleCards =
+            window.innerWidth >= 1024 ? 2 : 1;
+
+        const targetIndex =
+            direction === "right"
+                ? Math.min(
+                    currentIndex + visibleCards,
+                    cards.length - 1
+                )
+                : Math.max(
+                    currentIndex - visibleCards,
+                    0
+                );
+
+        cards[targetIndex].scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+        });
+    }
+
     return (
-        <div className="mx-auto w-full max-w-6xl">
-            <h2 className="text-3xl font-bold sm:text-4xl md:text-6xl">
-                Experience
-            </h2>
+        <section
+            className="
+                relative
+                mx-auto
+                w-full
+                max-w-[1200px]
+                py-8
+            "
+        >
+            {/* LEFT ARROW */}
+            <button
+                type="button"
+                onClick={() => scroll("left")}
+                aria-label="Previous experience"
+                className="
+                    absolute
+                    top-1/2
+                    z-30
 
-            <div className="mt-6 space-y-4 md:mt-10 md:space-y-6">
-                {experiences.map((experience) => (
-                    <article
-                        key={`${experience.organization}-${experience.role}`}
-                        className="w-full rounded-2xl bg-white/15 p-5 sm:rounded-3xl sm:p-6"
-                    >
-                        <p className="text-xs uppercase tracking-wider sm:text-sm">
-                            {experience.dates}
-                        </p>
+                    hidden
+                    -translate-y-1/2
 
-                        <h3 className="mt-2 text-xl font-semibold sm:text-2xl">
-                            {experience.role}
-                        </h3>
+                    text-4xl
+                    text-[#F3EED8]
 
-                        <p className="mt-1 text-base sm:text-lg">
-                            {experience.organization}
-                        </p>
+                    transition-transform
+                    duration-200
 
-                        <p className="mt-4 wrap-break-word text-sm leading-6 sm:text-base sm:leading-7">
-                            {experience.description}
-                        </p>
-                    </article>
-                ))}
+                    hover:scale-110
+
+                    lg:-left-10
+                    lg:block
+                "
+            >
+                ←
+            </button>
+
+            {/* CAROUSEL VIEWPORT */}
+            <div
+                className="
+                    mx-auto
+                    w-full
+                    overflow-x-hidden
+                    overflow-y-visible
+                "
+            >
+                {/* CAROUSEL TRACK */}
+                <div
+                    ref={carouselRef}
+                    className="
+                        flex
+                        items-center
+
+                        gap-8
+
+                        overflow-x-hidden
+                        scroll-smooth
+
+                        px-6
+                        py-8
+
+                        sm:px-8
+
+                        lg:gap-12
+                        lg:px-10
+                        lg:py-16
+                    "
+                >
+                    {experiences.map(
+                        (experience, index) => (
+                            <div
+                                key={`${experience.organization}-${experience.title}`}
+                                data-experience-card
+                                className={`
+                                    flex
+                                    shrink-0
+                                    justify-center
+
+                                    basis-full
+
+                                    transition-transform
+                                    duration-300
+
+                                    lg:basis-[calc((100%-3rem)/2)]
+
+                                    ${
+                                        index % 2 === 0
+                                            ? "lg:-translate-y-8"
+                                            : "lg:translate-y-8"
+                                    }
+                                `}
+                            >
+                                <ExperienceCard
+                                    {...experience}
+                                    rotation={
+                                        index % 2 === 0
+                                            ? "left"
+                                            : "right"
+                                    }
+                                />
+                            </div>
+                        )
+                    )}
+                </div>
             </div>
-        </div>
+
+            {/* RIGHT ARROW */}
+            <button
+                type="button"
+                onClick={() => scroll("right")}
+                aria-label="Next experience"
+                className="
+                    absolute
+                    top-1/2
+                    z-30
+
+                    hidden
+                    -translate-y-1/2
+
+                    text-4xl
+                    text-[#F3EED8]
+
+                    transition-transform
+                    duration-200
+
+                    hover:scale-110
+
+                    lg:-right-10
+                    lg:block
+                "
+            >
+                →
+            </button>
+
+            {/* MOBILE CONTROLS */}
+            <div
+                className="
+                    mt-2
+
+                    flex
+                    justify-center
+                    gap-10
+
+                    lg:hidden
+                "
+            >
+                <button
+                    type="button"
+                    onClick={() => scroll("left")}
+                    aria-label="Previous experience"
+                    className="
+                        text-3xl
+                        text-[#F3EED8]
+
+                        transition-transform
+
+                        hover:scale-110
+                    "
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => scroll("right")}
+                    aria-label="Next experience"
+                    className="
+                        text-3xl
+                        text-[#F3EED8]
+
+                        transition-transform
+
+                        hover:scale-110
+                    "
+                >
+                    →
+                </button>
+            </div>
+        </section>
     );
 }
