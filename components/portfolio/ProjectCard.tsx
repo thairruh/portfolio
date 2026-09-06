@@ -53,7 +53,6 @@ export default function ProjectCard({
         lg:left-39
         lg:top-[-13px]
         lg:w-[95%]
-        lg:rotate-10
         lg:rounded-[1.25rem]
     `;
 
