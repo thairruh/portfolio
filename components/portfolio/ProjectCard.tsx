@@ -93,15 +93,19 @@ export default function ProjectCard({
                 w-[75vw]
                 max-w-90
 
-                scale-[0.85]
+                [--card-scale:0.85]
+                scale-(--card-scale)
 
                 sm:w-[72vw]
                 sm:max-w-97.5
-                sm:scale-90
+                sm:[--card-scale:0.9]
 
                 lg:w-full
                 lg:max-w-none
-                lg:scale-100
+                lg:[--card-scale:1]
+
+                [@media(min-width:1024px)_and_(max-height:800px)]:[--card-scale:0.85]
+                [@media(min-width:1024px)_and_(max-height:740px)]:[--card-scale:0.78]
             "
         >
             {/* NOTE PAPER */}
@@ -312,28 +316,32 @@ export default function ProjectCard({
 
                 {/* TECHNOLOGIES */}
                 {technologies && (
-                    <div
-                        className="
-                            absolute
-                            bottom-7.5
-                            left-5
-                            right-5
-                            z-10
-                            text-[#474747]
+                <div
+                    className="
+                        absolute
+                        bottom-4
+                        left-5
+                        right-5
 
-                            flex
-                            flex-wrap
-                            items-center
+                        z-10
 
-                            gap-x-2
-                            gap-y-0
+                        flex
+                        flex-wrap
+                        items-center
 
-                            lg:bottom-9
-                            lg:left-7
-                            lg:right-7
-                            lg:gap-x-3
-                        "
-                    >
+                        gap-x-2
+                        gap-y-0
+
+                        text-[#474747]
+
+                        sm:bottom-6
+
+                        lg:bottom-9
+                        lg:left-7
+                        lg:right-7
+                        lg:gap-x-3
+                    "
+                >
                         {technologies.map(
                             (technology) => (
                                 <span
@@ -345,8 +353,11 @@ export default function ProjectCard({
 
                                         px-1
 
-                                        text-[0.72rem]
-                                        leading-7.5
+                                        text-[0.65rem]
+                                        leading-6
+
+                                        sm:text-[0.72rem]
+                                        sm:leading-7
 
                                         lg:text-sm
                                         lg:leading-9

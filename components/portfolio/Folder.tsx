@@ -77,9 +77,9 @@ export default function Folder({
                 [--folder-top-space:3.25rem]
                 [--folder-open-gap:1.45rem]
 
-                md:[--folder-closed-strip:3.20rem]
-                md:[--folder-top-space:clamp(3rem,10.5svh,5rem)]
-                md:[--folder-open-gap:clamp(1.75rem,4svh,4.25rem)]
+                md:[--folder-closed-strip:clamp(2.5rem,4.5svh,3.2rem)]
+                md:[--folder-top-space:clamp(2.5rem,7svh,4.5rem)]
+                md:[--folder-open-gap:clamp(1.4rem,3svh,3rem)]
 
                 shadow-[0_-10px_18px_-8px_rgba(0,0,0,0.35)]
                 transition-[top]

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
 import { technologies } from "@/data/technologies";
 
 export default function TechnologiesSection() {
@@ -10,6 +9,8 @@ export default function TechnologiesSection() {
     return (
         <section
             className="
+                short-laptop-content
+                mobile-short-content
                 mx-auto
                 w-full
                 max-w-337.5
@@ -17,6 +18,8 @@ export default function TechnologiesSection() {
         >
             <div
                 className="
+                    
+
                     grid
                     grid-cols-1
                     gap-8
@@ -48,7 +51,6 @@ export default function TechnologiesSection() {
                             lg:pt-7
                         "
                     >
-                        {/* TITLE */}
                         <h3
                             className="
                                 mb-6
@@ -61,7 +63,6 @@ export default function TechnologiesSection() {
                             {group.title}
                         </h3>
 
-                        {/* ICON GRID */}
                         <div
                             className="
                                 grid
@@ -131,7 +132,6 @@ export default function TechnologiesSection() {
                                             />
                                         </button>
 
-                                        {/* TOOLTIP */}
                                         <div
                                             className={`
                                                 pointer-events-none

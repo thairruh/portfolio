@@ -2,6 +2,8 @@ export default function AboutSection() {
     return (
         <section
             className="
+                about-short-laptop
+                mobile-short-content
                 mx-auto
                 grid
                 w-full

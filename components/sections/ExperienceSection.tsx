@@ -115,9 +115,11 @@ export default function ExperienceSection() {
                 <div
                     ref={carouselRef}
                     className="
+                        short-laptop-content
+                        mobile-short-content
+
                         flex
                         items-center
-
                         gap-8
 
                         overflow-x-hidden
@@ -202,7 +204,7 @@ export default function ExperienceSection() {
             {/* MOBILE CONTROLS */}
             <div
                 className="
-                    mt-2
+                    -mt-3
 
                     flex
                     justify-center

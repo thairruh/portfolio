@@ -16,19 +16,14 @@ type ActiveVideo = {
 } | null;
 
 export default function ProjectsSection() {
-    const carouselRef =
-        useRef<HTMLDivElement>(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
-    const [showcase, setShowcase] =
-        useState<Showcase>("code");
+    const [showcase, setShowcase] = useState<Showcase>("code");
 
-    const [activeVideo, setActiveVideo] =
-        useState<ActiveVideo>(null);
+    const [activeVideo, setActiveVideo] = useState<ActiveVideo>(null);
 
-    const activeProjects =
-        showcase === "code"
-            ? projects
-            : edits;
+    const activeProjects = showcase === "code" ? projects : edits;
 
     function changeShowcase(
         nextShowcase: Showcase
@@ -37,17 +32,13 @@ export default function ProjectsSection() {
 
         setShowcase(nextShowcase);
 
-        carouselRef.current?.scrollTo({
-            left: 0,
-            behavior: "smooth",
-        });
+        carouselRef.current?.scrollTo({left: 0, behavior: "smooth",});
     }
 
     function scroll(
         direction: "left" | "right"
     ) {
-        const carousel =
-            carouselRef.current;
+        const carousel = carouselRef.current;
 
         if (!carousel) return;
 
@@ -95,15 +86,15 @@ export default function ProjectsSection() {
         const targetIndex =
             direction === "right"
                 ? Math.min(
-                      currentIndex +
-                          visibleCards,
-                      cards.length - 1
-                  )
+                    currentIndex +
+                        visibleCards,
+                        cards.length - 1
+                )
                 : Math.max(
-                      currentIndex -
-                          visibleCards,
-                      0
-                  );
+                    currentIndex -
+                        visibleCards,
+                    0
+                );
 
         cards[
             targetIndex
@@ -121,6 +112,7 @@ export default function ProjectsSection() {
                 mx-auto
                 w-full
                 max-w-375
+                mobile-short-content
 
                 -translate-y-8
 
@@ -314,6 +306,7 @@ export default function ProjectsSection() {
                     -translate-y-1/2
 
                     text-4xl
+                    text-[#F3EED8]
 
                     transition-transform
                     duration-200
@@ -406,6 +399,7 @@ export default function ProjectsSection() {
                     -translate-y-1/2
 
                     text-4xl
+                    text-[#F3EED8]
 
                     transition-transform
                     duration-200
@@ -440,6 +434,7 @@ export default function ProjectsSection() {
                     aria-label="Previous project"
                     className="
                         text-3xl
+                        text-[#F3EED8]
 
                         transition-transform
                         duration-200
@@ -458,6 +453,7 @@ export default function ProjectsSection() {
                     aria-label="Next project"
                     className="
                         text-3xl
+                        text-[#F3EED8]
 
                         transition-transform
                         duration-200
@@ -542,6 +538,11 @@ export default function ProjectsSection() {
                                 controls
                                 autoPlay
                                 playsInline
+                                onLoadedMetadata={() => {
+                                    if (videoRef.current) {
+                                        videoRef.current.volume = 0.4;
+                                    }
+                                }}
                                 className="
                                     block
 
