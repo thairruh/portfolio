@@ -69,22 +69,6 @@ export const projects = [
         type: "code" as const,
     },
     {
-        title: "Music Match",
-        description:
-            "A music-based guessing game featuring artist matching and leaderboards.",
-        image: "/music-match.png",
-        color: "#DB9857",
-        technologies: [
-            "Flask",
-            "Python",
-            "SQLite",
-            "JavaScript",
-            "iTunes API",
-        ],
-        link: "https://musicmatch.pythonanywhere.com/",
-        type: "code" as const,
-    },
-    {
         title: "I'm Human",
         description:
             "A very annoying login page that requires you to prove you're human by solving a series of challenges.",
@@ -101,9 +85,25 @@ export const projects = [
         type: "code" as const,
     },
     {
+        title: "Music Match",
+        description:
+            "A music-based guessing game featuring artist matching and leaderboards.",
+        image: "/music-match.png",
+        color: "#DB9857",
+        technologies: [
+            "Flask",
+            "Python",
+            "SQLite",
+            "JavaScript",
+            "iTunes API",
+        ],
+        link: "https://musicmatch.pythonanywhere.com/",
+        type: "code" as const,
+    },
+    {
         title: "Portfolio",
         description:
-            "You're looking at it right now! My personal website to show off my projects and skills.",
+            "You're looking at it right now! My personal website to show off who I am and what I do.",
         image: "/portfolio.png",
         color: "#32289C",
         technologies: [
@@ -112,7 +112,7 @@ export const projects = [
             "TypeScript",
             "Tailwind CSS",
         ],
-        link: "",
+        link: "https://thaira.dev/",
         type: "code" as const,
     },
 ];
