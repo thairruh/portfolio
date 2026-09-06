@@ -41,7 +41,7 @@ export default function ExperienceCard({
                 px-5
                 py-7
 
-                shadow-[0_12px_18px_rgba(0,0,0,0.28)]
+                shadow-[0_12px_18px_rgba(0,0,0,0.35)]
 
                 transition-transform
                 duration-300

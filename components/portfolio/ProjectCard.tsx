@@ -31,7 +31,7 @@ export default function ProjectCard({
 
     const imageClasses = `
         absolute
-        left-45
+        left-42
         top-[-10px]
         z-20
 

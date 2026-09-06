@@ -70,7 +70,7 @@ export default function ExperienceSection() {
                 relative
                 mx-auto
                 w-full
-                max-w-[1200px]
+                max-w-300
                 py-8
             "
         >
