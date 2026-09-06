@@ -422,7 +422,7 @@ export default function ProjectsSection() {
             {/* MOBILE ARROWS */}
             <div
                 className="
-                    -mt-2
+                    -mt-10
 
                     flex
                     items-center

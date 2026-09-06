@@ -82,11 +82,15 @@ export default function ProjectCard({
                 w-[75vw]
                 max-w-90
 
+                scale-[0.85]
+
                 sm:w-[72vw]
                 sm:max-w-97.5
+                sm:scale-90
 
                 lg:w-full
                 lg:max-w-none
+                lg:scale-100
             "
         >
             {/* NOTE PAPER */}
