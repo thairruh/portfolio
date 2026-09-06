@@ -451,7 +451,13 @@ export default function ProjectCard({
                             text-white
                         "
                     >
-                        ▶
+                        <svg
+                            viewBox="0 0 30 24"
+                            className="ml-1 h-7 w-7 fill-white"
+                            aria-hidden="true"
+                        >
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
                     </span>
                 </button>
             ) : link ? (
