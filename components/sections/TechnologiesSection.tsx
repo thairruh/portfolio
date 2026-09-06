@@ -50,6 +50,7 @@ export default function TechnologiesSection() {
                                 mb-6
 
                                 text-2xl
+                                text-[#3D2F15]
 
                                 lg:text-[1.65rem]
                             "

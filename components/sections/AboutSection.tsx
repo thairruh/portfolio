@@ -75,6 +75,7 @@ export default function AboutSection() {
                         className="
                             mb-5
                             text-center
+                            text-[#3D2F15]
                             text-2xl
                             leading-tight
                             sm:mb-6
@@ -89,6 +90,7 @@ export default function AboutSection() {
                     <p
                         className="
                             text-[0.82rem]
+                            text-[#3D2F15]
                             leading-[1.55]
                             sm:text-[0.9rem]
                             sm:leading-[1.6]

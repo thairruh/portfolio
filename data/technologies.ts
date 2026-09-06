@@ -19,15 +19,14 @@ export const technologies = [
         title: "Frameworks/Libraries",
         border: "#D7A67A",
         tools: [
-            { name: "React", icon: "/tech/react.svg" },
-            { name: "React Native", icon: "/tech/react.svg" },
+            { name: "React / React Native", icon: "/tech/react.svg" },
             { name: "Next.js", icon: "/tech/nextjs.svg" },
             { name: "Node.js", icon: "/tech/nodejs.svg" },
             { name: "Flask", icon: "/tech/flask.svg" },
             { name: "Tailwind CSS", icon: "/tech/tailwind.svg" },
             { name: "Three.js", icon: "/tech/threejs.svg" },
             { name: "MediaPipe", icon: "/tech/mediapipe.svg" },
-            { name: "Phaser.js", icon: "/tech/phaser.svg" },
+            { name: "Phaser.js", icon: "/tech/phaser.png" },
         ],
     },
 
@@ -45,14 +44,8 @@ export const technologies = [
             { name: "SQLite", icon: "/tech/sqlite.svg" },
             { name: "Prisma", icon: "/tech/prisma.svg" },
             { name: "Godot", icon: "/tech/godot.svg" },
-            {
-                name: "Adobe After Effects",
-                icon: "/tech/after-effects.svg",
-            },
-            {
-                name: "Adobe Premiere Pro",
-                icon: "/tech/premiere-pro.svg",
-            },
+            { name: "Adobe After Effects", icon: "/tech/after-effects.svg"},
+            { name: "Adobe Premiere Pro", icon: "/tech/premiere.svg"},
         ],
     },
 ];

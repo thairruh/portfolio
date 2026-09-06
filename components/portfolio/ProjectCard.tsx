@@ -199,6 +199,7 @@ export default function ProjectCard({
                             m-0
 
                             text-[1.55rem]
+                            text-[#474747]
                             leading-9
 
                             lg:text-3xl
@@ -213,6 +214,7 @@ export default function ProjectCard({
 
                             text-[0.9rem]
                             leading-9
+                            text-[#474747]
 
                             lg:text-base
                         "
@@ -228,6 +230,7 @@ export default function ProjectCard({
 
                                 text-[0.65rem]
                                 leading-5
+                                text-[#474747]
 
                                 lg:mt-2
                                 lg:text-[0.72rem]
@@ -301,6 +304,7 @@ export default function ProjectCard({
                             left-5
                             right-5
                             z-10
+                            text-[#474747]
 
                             flex
                             flex-wrap

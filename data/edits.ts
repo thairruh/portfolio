@@ -11,6 +11,17 @@ export const edits = [
     },
 
     {
+        title: "Persona 5",
+        description:
+            "A short edit of Joker and Akechi from Persona 5. I had so much fun experimenting with the typography and fitting it to the song!",
+        image: "/motion/project-3-thumbnail.png",
+        video: "/edits/shuake.mp4",
+        color: "#DB9857",
+        credits: [
+            "@kaivvva ",
+        ],
+    },
+    {
         title: "Childe",
         description:
             "An edit of Childe from Genshin Impact! I love how the effects and transitions all flow together here.",
@@ -24,18 +35,6 @@ export const edits = [
             "@beefbulgogi",
             "psid_teq",
             "Aerinon ",
-        ],
-    },
-
-    {
-        title: "Persona 5",
-        description:
-            "A short edit of Joker and Akechi from Persona 5. I had so much fun experimenting with the typography and fitting it to the song!",
-        image: "/motion/project-3-thumbnail.png",
-        video: "/edits/shuake.mp4",
-        color: "#DB9857",
-        credits: [
-            "@kaivvva ",
         ],
     },
     {
