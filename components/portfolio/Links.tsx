@@ -68,7 +68,7 @@ export default function Links() {
             </a>
 
             <a
-                href="/resume.pdf"
+                href="/resume/Thaira_Choudhury_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Resume"
