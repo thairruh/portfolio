@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Folder, { type FolderId } from "./Folder";
 
@@ -19,6 +19,12 @@ const folderOrder: FolderId[] = [
 ];
 
 export default function FolderStack() {
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        setVisible(true);
+    }, []);
+
     const [activeFolder, setActiveFolder] =
         useState<FolderId | null>(null);
 
@@ -66,17 +72,32 @@ export default function FolderStack() {
 
     return (
         <section
-    onClick={(e) => {
-        if (e.target === e.currentTarget) {
-            closeFolder();
-        }
-    }}
-    className="
-        absolute
-        inset-0
-        overflow-hidden
-    "
->
+            onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                    closeFolder();
+                }
+            }}
+            className={`
+                absolute
+                inset-0
+                overflow-hidden
+
+                transition-[opacity,translate]
+                duration-700
+                delay-100
+                ease-out
+
+                motion-reduce:translate-y-0
+                motion-reduce:opacity-100
+                motion-reduce:transition-none
+
+                ${
+                    visible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-20 opacity-0"
+                }
+            `}
+        >
             <Folder
                 id="about"
                 index={0}
