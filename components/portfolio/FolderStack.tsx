@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 import Folder, { type FolderId } from "./Folder";
-
 import AboutSection from "../sections/AboutSection";
 import ProjectsSection from "../sections/ProjectsSection";
 import ExperienceSection from "../sections/ExperienceSection";
@@ -39,48 +38,46 @@ export default function FolderStack() {
             : folderOrder.indexOf(activeFolder);
 
     function handleToggle(id: FolderId) {
-    if (closeTimer.current) {
-        clearTimeout(closeTimer.current);
-        closeTimer.current = null;
-    }
+        if (closeTimer.current) {
+            clearTimeout(closeTimer.current);
+            closeTimer.current = null;
+        }
 
-    // Clicking active folder closes it
-    if (activeFolder === id) {
-        closeFolder();
-        return;
-    }
+        // Clicking active folder closes it
+        if (activeFolder === id) {
+            closeFolder();
+            return;
+        }
 
-    // Open/switch folders
-    setIsClosing(false);
-    setActiveFolder(id);
-}
-    function closeFolder() {
-    if (activeFolder === null || isClosing) return;
-
-    if (closeTimer.current) {
-        clearTimeout(closeTimer.current);
-    }
-
-    setIsClosing(true);
-
-    closeTimer.current = setTimeout(() => {
-        setActiveFolder(null);
+        // Open/switch folders
         setIsClosing(false);
-        closeTimer.current = null;
-    }, ANIMATION_DURATION);
-}
+        setActiveFolder(id);
+    }
+
+    function closeFolder() {
+        if (activeFolder === null || isClosing) return;
+
+        if (closeTimer.current) {
+            clearTimeout(closeTimer.current);
+        }
+
+        setIsClosing(true);
+
+        closeTimer.current = setTimeout(() => {
+            setActiveFolder(null);
+            setIsClosing(false);
+            closeTimer.current = null;
+        }, ANIMATION_DURATION);
+    }
 
     return (
         <section
-            onClick={(e) => {
-                if (e.target === e.currentTarget) {
-                    closeFolder();
-                }
-            }}
             className={`
+                pointer-events-none
                 absolute
                 inset-0
                 overflow-hidden
+                z-10
 
                 transition-[opacity,translate]
                 duration-700
@@ -98,6 +95,22 @@ export default function FolderStack() {
                 }
             `}
         >
+            {/* Click-outside backdrop */}
+            {activeFolder !== null && (
+                <button
+                    type="button"
+                    aria-label="Close folder"
+                    onClick={closeFolder}
+                    className="
+                        pointer-events-auto
+                        absolute
+                        inset-0
+                        z-0
+                        cursor-default
+                    "
+                />
+            )}
+
             <Folder
                 id="about"
                 index={0}

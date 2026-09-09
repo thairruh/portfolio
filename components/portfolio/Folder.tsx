@@ -70,6 +70,7 @@ export default function Folder({
     return (
         <article
             className="
+                pointer-events-auto
                 absolute inset-x-0 bottom-0
                 flex min-h-0 flex-col
 

@@ -34,6 +34,7 @@ export default function Links() {
                 fixed
                 top-5
                 right-5
+                z-1
 
                 flex
                 items-center
